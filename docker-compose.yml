@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+
+  ipfs:
+    container_name: ipfs
+    image: ipfs/kubo:latest
+    ports:
+     - "4001:4001" # ipfs swarm - expose if needed/wanted
+     - "5001:5001" # ipfs api - expose if needed/wanted
+     - "8080:8080" # ipfs gateway - expose if needed/wanted
+    volumes:
+      - ./ipfs:/data/ipfs
+      - ./bootstrap.sh:/container-init.d/bootstrap.sh
+    restart: always
