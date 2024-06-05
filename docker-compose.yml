@@ -11,5 +11,5 @@ services:
      - "8080:8080" # ipfs gateway - expose if needed/wanted
     volumes:
       - ./ipfs:/data/ipfs
-      - ./bootstrap.sh:/container-init.d/bootstrap.sh
+      - ./bootstrap.sh:/container-init.d/bootstrap.sh:ro
     restart: always
